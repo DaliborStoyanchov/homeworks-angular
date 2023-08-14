@@ -1,0 +1,13 @@
+<div class="movie-list-app">
+  <h2>Movie List: {{ movieListTitle }}</h2>
+
+  <div class="movie-panel" *ngIf="isMoviePanelShown">
+    <p> <b> Movie: </b> {{ movie.name }} </p>
+    <p> <b>Release Date:</b> {{ movie.releaseDate.toLocaleString('en-GB').slice(0,10) }} </p>
+    <p> <b>Producer:</b> {{ movie.producerName }} </p>
+    <p> <b>Genre:</b> {{ movie.genre }} </p>
+  </div>
+
+  <app-movie (showMovieOutput)="movieReceive($event)" [movieTitle]="movieTitle"></app-movie>
+
+</div>
